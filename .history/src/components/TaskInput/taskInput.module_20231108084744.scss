@@ -1,0 +1,17 @@
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 2rem;
+  input {
+    padding: 5px;
+  }
+  button {
+    flex-shrink: 0;
+  }
+}

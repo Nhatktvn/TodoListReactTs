@@ -1,0 +1,34 @@
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+.tasks {
+  .task {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    input {
+      flex: 0 0 10%;
+      max-width: 10%;
+      height: 2rem;
+    }
+    .taskName {
+      flex: 0 0 70%;
+      max-width: 70%;
+      font-size: 1.7rem;
+      &.taskNameDone {
+        text-decoration: line-through;
+      }
+    }
+    .taskAction {
+      display: flex;
+      gap: 1rem;
+      .btn {
+        padding: 2px;
+      }
+    }
+  }
+}
