@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './todoList.module.scss'
 import TaskInput from '../TaskInput/TaskInput'
 import { Todo } from '../../@types/todo.type'

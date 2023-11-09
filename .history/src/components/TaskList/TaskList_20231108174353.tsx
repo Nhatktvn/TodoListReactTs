@@ -12,6 +12,8 @@ interface TaskLiskProps {
 }
 export default function TaskList(props: TaskLiskProps) {
   const { doneTaskList, todos, handleEditDoneTodos, handleDelete, handleGetCurrentTodo } = props
+  console.log('hello')
+
   return (
     <div>
       <h2 className={styles.title}>{doneTaskList ? 'Hoàn thành' : 'Chưa hoàn thành'}</h2>

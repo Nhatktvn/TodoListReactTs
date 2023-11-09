@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './taskInput.module.scss'
 import { FaPlus } from 'react-icons/fa'
 import { Todo } from '../../@types/todo.type'
@@ -6,15 +6,14 @@ interface TaskInputProps {
   addTodo: (name: String) => void
   currentTodo: Todo | null
   handleEditNameTodos: (id: number, name: String) => void
+  textInput: any
 }
 export default function TaskInput(props: TaskInputProps) {
-  const { addTodo, currentTodo, handleEditNameTodos } = props
+  const { addTodo, currentTodo, handleEditNameTodos, textInput } = props
   const [inputTask, setTaskInput] = useState<String>('')
-  const inputText = useRef<any>()
   useEffect(() => {
     if (currentTodo) {
       setTaskInput(currentTodo.name)
-      inputText.current.focus()
     }
   }, [currentTodo])
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -35,7 +34,6 @@ export default function TaskInput(props: TaskInputProps) {
       <h1 className={styles.title}>To do list typescript</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
-          ref={inputText}
           type='text'
           placeholder='caption goes here'
           value={`${inputTask}`}

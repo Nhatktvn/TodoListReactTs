@@ -8,6 +8,7 @@ export default function TodoList() {
   const [listTask, setListTask] = useState<Todo[]>([])
   const doneTasks = listTask.filter((task) => task.done)
   const notDoneTasks = listTask.filter((task) => !task.done)
+  const textInput = useRef()
   useEffect(() => {
     const todosString = localStorage.getItem('todos')
     const listTaskParse = JSON.parse(todosString || '[]')
@@ -74,7 +75,12 @@ export default function TodoList() {
   return (
     <div className={styles.todoList}>
       <div className={styles.todoListContainer}>
-        <TaskInput addTodo={addTodo} currentTodo={currentTodo} handleEditNameTodos={handleEditNameTodos} />
+        <TaskInput
+          addTodo={addTodo}
+          currentTodo={currentTodo}
+          handleEditNameTodos={handleEditNameTodos}
+          textInput={textInput}
+        />
         <TaskList
           doneTaskList={false}
           todos={notDoneTasks}

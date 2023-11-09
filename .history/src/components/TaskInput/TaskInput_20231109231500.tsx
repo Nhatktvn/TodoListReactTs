@@ -10,11 +10,10 @@ interface TaskInputProps {
 export default function TaskInput(props: TaskInputProps) {
   const { addTodo, currentTodo, handleEditNameTodos } = props
   const [inputTask, setTaskInput] = useState<String>('')
-  const inputText = useRef<any>()
+  const inputText = useRef
   useEffect(() => {
     if (currentTodo) {
       setTaskInput(currentTodo.name)
-      inputText.current.focus()
     }
   }, [currentTodo])
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
